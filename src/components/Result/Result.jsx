@@ -15,11 +15,11 @@ function Result({
   show,
   setShow,
 }) {
-    let currentDate = new Date();
-    let day = currentDate.getDate();
-    let month = currentDate.getMonth() + 1;
-    let year = currentDate.getFullYear();
-    let today = `${month}/${day}/${year}`
+  let currentDate = new Date();
+  let day = currentDate.getDate();
+  let month = currentDate.getMonth() + 1;
+  let year = currentDate.getFullYear();
+  let today = `${month}/${day}/${year}`;
   const [icon, setIcon] = useState('');
   function getIcon() {
     const url = `http://openweathermap.org/img/wn/${data.weather['0'].icon}@2x.png`;
