@@ -70,9 +70,9 @@ function Result({ data }) {
               <p>{data.main.humidity}%</p>
             </div>
           </div>
-          <Link to='/five-day'>
+          {/* <Link to='/five-day'>
             <h5>5-day Forecast</h5>
-          </Link>
+          </Link> */}
         </div>
       );
     }

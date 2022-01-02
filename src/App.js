@@ -59,7 +59,7 @@ function App() {
       <main>
         <Routes>
           <Route path='/' element={<Result data={data} />} />
-          <Route path='/five-day' element={<FiveDay searchOptions={searchOptions} searchString={searchString} lastSearch={lastSearch} data={data}/>} />
+          {/* <Route path='/five-day' element={<FiveDay searchOptions={searchOptions} searchString={searchString} lastSearch={lastSearch} data={data}/>} /> */}
         </Routes>
         {/* <Result data={data} /> */}
       </main>
