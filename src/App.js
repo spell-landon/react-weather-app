@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import NoResult from './components/NoResult/NoResult';
 import Result from './components/Result/Result';
+import FiveDay from './components/FiveDay/FiveDay'
 // dependencies
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -13,24 +14,6 @@ function App() {
   const [searchString, setSearchString] = useState('');
   const [lastSearch, setLastSearch] = useState('');
   const [show, setShow] = useState(false);
-  // useEffect(() => {
-  //   fetch(
-  //     `http://api.openweathermap.org/data/2.5/weather?q=Austin&units=imperial&appid=${searchOptions.key}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       setData(res);
-  //       console.log(res);
-  //       setLastSearch(searchString);
-  //       setSearchString('');
-  //     })
-  //     .catch((err) => {
-  //       console.error('Something went wrong...', err);
-  //     })
-  //     .finally(() => {
-  //       return;
-  //     });
-  // }, []);
 
   const searchOptions = {
     key: process.env.REACT_APP_WEATHER_KEY,
@@ -68,46 +51,17 @@ function App() {
       <header>
         <Header
           data={data}
-          setData={setData}
           searchString={searchString}
-          setSearchString={setSearchString}
-          lastSearch={lastSearch}
-          setLastSearch={setLastSearch}
-          show={show}
-          setShow={setShow}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
         />
       </header>
       <main>
-        {/* <Routes>
-          <Route index path='/' element={<NoResult />} />
-          <Route
-            path={`/${data.name}`}
-            element={
-              <Result
-                data={data}
-                setData={setData}
-                searchString={searchString}
-                setSearchString={setSearchString}
-                lastSearch={lastSearch}
-                setLastSearch={setLastSearch}
-                show={show}
-                setShow={setShow}
-              />
-            }
-          />
-        </Routes> */}
-        <Result
-          data={data}
-          setData={setData}
-          searchString={searchString}
-          setSearchString={setSearchString}
-          lastSearch={lastSearch}
-          setLastSearch={setLastSearch}
-          show={show}
-          setShow={setShow}
-        />
+        <Routes>
+          <Route path='/' element={<Result data={data} />} />
+          <Route path='/five-day' element={<FiveDay searchOptions={searchOptions} searchString={searchString} lastSearch={lastSearch} data={data}/>} />
+        </Routes>
+        {/* <Result data={data} /> */}
       </main>
     </div>
   );

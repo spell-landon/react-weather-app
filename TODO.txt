@@ -1,0 +1,4 @@
+1. Link the hero title to NoResult and clean out 'data'
+2. Find and implement a 5 day forecast
+3. Check out Refactoring UI book for card styling ideas
+4. Include some sort of weather-themed background instead of white?

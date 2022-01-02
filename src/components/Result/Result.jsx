@@ -1,20 +1,11 @@
 import React from 'react';
 import css from './Result.module.css';
 import { useState, useEffect } from 'react/cjs/react.development';
-import { Routes, Route } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 import NoResult from '../NoResult/NoResult';
+import { Link } from 'react-router-dom';
 
-function Result({
-  data,
-  setData,
-  searchString,
-  setSearchString,
-  lastSearch,
-  setLastSearch,
-  show,
-  setShow,
-}) {
+function Result({ data }) {
+  // date
   let currentDate = new Date();
   let day = currentDate.getDate();
   let month = currentDate.getMonth() + 1;
@@ -79,7 +70,9 @@ function Result({
               <p>{data.main.humidity}%</p>
             </div>
           </div>
-          {/* <h5>5-day Forecast</h5> */}
+          <Link to='/five-day'>
+            <h5>5-day Forecast</h5>
+          </Link>
         </div>
       );
     }

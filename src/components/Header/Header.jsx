@@ -2,20 +2,9 @@ import React from 'react';
 import css from './Header.module.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import NoResult from '../NoResult/NoResult';
 
-function Header({
-  data,
-  setData,
-  searchString,
-  setSearchString,
-  lastSearch,
-  setLastSearch,
-  show,
-  setShow,
-  handleChange,
-  handleSubmit,
-  cityName,
-}) {
+function Header({ searchString, handleChange, handleSubmit, data }) {
   return (
     <div className={css.container}>
       <nav className={css.navigation}>
